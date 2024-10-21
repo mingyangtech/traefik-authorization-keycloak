@@ -2,6 +2,7 @@ package traefik_authorization_keycloak
 
 import (
 	"context"
+	"crypto/tls"
 	"net/http"
 	"net/url"
 	"strings"
@@ -35,6 +36,7 @@ func (am *AuthMiddleware) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	kcReq.Header.Set("Authorization", "Bearer "+req.Header.Get("X-Auth-Request-Access-Token"))
 	kcReq.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
+	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	client := &http.Client{}
 	kcResp, err := client.Do(kcReq)
 	if err != nil {
