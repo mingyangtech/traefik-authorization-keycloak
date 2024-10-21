@@ -9,8 +9,8 @@ import (
 )
 
 type Config struct {
-	KeycloakURL      string `json:"keycloak_url"`
-	KeycloakClientId string `json:"keycloak_client_id"`
+	KeycloakURL      string `yaml:"keycloak_url"`
+	KeycloakClientId string `yaml:"keycloak_client_id"`
 }
 
 type AuthMiddleware struct {
