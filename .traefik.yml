@@ -1,0 +1,11 @@
+displayName: Authorization with keycloak
+type: middleware
+iconPath: .assets/icon.png
+
+import: github.com/mingyangtech/traefik-authorization-keycloak
+
+summary: 'traefik authorization'
+
+testData:
+  keycloak_url: http://keycloak:8080/auth/realms/mingyang/protocol/openid-connect/token
+  keycloak_client_id: oauth2-proxy
