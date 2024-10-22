@@ -1,3 +1,3 @@
 module github.com/mingyangtech/traefik-authorization-keycloak
 
-go 1.20
+go 1.15
